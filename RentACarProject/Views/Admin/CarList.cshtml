@@ -1,0 +1,53 @@
+﻿@model List<GetCarQueryResult>
+@{
+    ViewData["Title"] = "CarList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Araçlar</h4>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Görsel</th>
+                        <th>Fiyat</th>
+                        <th>Marka</th>
+                        <th>Model</th>
+                        <th>KM</th>
+                        <th>Benzin Tipi</th>
+                        <th>Vites Tipi</th>
+                        <th>Motor Gücü</th>
+                        <th>Kasa Tipi</th>
+                        <th>Renk</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CarId</td>
+                            <td><img src="@item.ImageUrl" width="200" height="200" /></td>
+                            <td>@item.Price</td>
+                            <td>@item.Brand</td>
+                            <td>@item.Model</td>
+                            <td>@item.KM</td>
+                            <td>@item.FuelType</td>
+                            <td>@item.GearType</td>
+                            <td>@item.MotorPower</td>
+                            <td>@item.BodyType</td>
+                            <td>@item.Color</td>
+                            <td><a href="/Admin/RemoveCar/@item.CarId" class="btn btn-danger">Sil</a></td>
+                            <td><a href="/Admin/UpdateCar/@item.CarId" class="btn btn-info">Güncelle</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <a href="/Admin/CreateCar/" class="btn btn-outline-success">Yeni Araç Ekle</a>
+        </div>
+    </div>
+</div>

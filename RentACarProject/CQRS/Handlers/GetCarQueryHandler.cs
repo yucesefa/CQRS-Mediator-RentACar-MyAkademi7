@@ -20,6 +20,7 @@ namespace RentACarProject.CQRS.Handlers
                 Model = x.Model,
                 KM = x.KM,
                 FuelType = x.FuelType,
+                GearType = x.GearType,
                 MotorPower = x.MotorPower,
                 BodyType = x.BodyType,
                 Color = x.Color,

@@ -86,7 +86,7 @@
 
                         <div class="intro">
                             <h1><strong>Araçlar</strong></h1>
-                            <div class="custom-breadcrumbs"><a href="index.html">Anasayafa</a> <span class="mx-2">/</span> <strong>Listings</strong></div>
+                            <div class="custom-breadcrumbs"><a href="index.html">Anasayafa</a> <span class="mx-2">/</span> <strong>Araçlar</strong></div>
                         </div>
 
                     </div>
@@ -97,9 +97,6 @@
         <div class="site-section bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7">
-                        <h2 class="section-heading"><strong>Araçlar</strong></h2>
-                    </div>
                 </div>
 
 
@@ -115,136 +112,70 @@
                                 <div class="listing-contents h-100">
                                     <h3>@item.Brand @item.Model</h3>
                                     <div class="rent-price">
-                                        <strong>@item.Price ₺</strong><span class="mx-1">/</span>Günlük
+                                        <strong>@item.Price</strong><span class="mx-1">/</span>Günlük
                                     </div>
                                     <div class="d-block d-md-flex mb-3 border-bottom pb-3">
                                         <div class="listing-feature pr-4">
-                                            <span class="caption">Araç KM:</span>
+                                            <span class="caption">Araç Km:</span>
                                             <span class="number">@item.KM</span>
                                         </div>
                                         <div class="listing-feature pr-4">
-                                            <span class="caption">Yakıt Türü:</span>
+                                            <span class="caption">Benzin Türü:</span>
                                             <span class="number">@item.FuelType</span>
                                         </div>
                                         <div class="listing-feature pr-4">
                                             <span class="caption">Motor Gücü:</span>
                                             <span class="number">@item.MotorPower</span>
                                         </div>
-                                        <div class="listing-feature pr-4">
-                                            <span class="caption">Araç Tipi:</span>
-                                            <span class="number">@item.BodyType</span>
-                                        </div>
-                                        <div class="listing-feature pr-4">
-                                            <span class="caption">Renk:</span>
-                                            <span class="number">@item.Color</span>
-                                        </div>
                                     </div>
                                     <div>
-                                        
-                                        <p><a href="#" class="btn btn-primary btn-sm">Kirala</a></p>
+
+                                        <p> <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal1-@item.CarId">Detaylar</a>  <a href="#" class="btn btn-primary btn-sm">Aracı Kirala</a> </p>
+
+
                                     </div>
                                 </div>
 
+                            </div>
+                        </div>
+                        <div class="modal" id="Modal1-@item.CarId" tabindex="-1">
+                            <div class="modal-dialog modal-md">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title fw-bold"><b>@item.Brand @item.Model</b></h5><br />
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <img src="@item.ImageUrl" style="height:200px;" />
+                                        <div class="card">
+                                            <div class="card-header"><b>Araç Özellikleri</b></div>
+                                            <div class="card-body p-3">
+                                                <span class="caption"><b>Araç Km:</b> @item.KM</span><br />
+                                                <span class="caption"><b>Vites Tipi:</b> @item.GearType</span><br />
+                                                <span class="caption"><b>Benzin Tipi:</b> @item.FuelType</span><br />
+                                                <span class="caption"><b>Motor Gücü:</b> @item.MotorPower</span><br />
+                                                <span class="caption"><b>Kasa Tipi:</b> @item.BodyType</span><br />
+                                                <span class="caption"><b>Günlük Fiyat:</b> @item.Price</span><br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     }
-                    
-
-                
-
                 </div>
-                <div class="row">
-                    <div class="col-5">
-                        <div class="custom-pagination">
-                            <a href="#">1</a>
-                            <span>2</span>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
-
-
-
-        <div class="site-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <h2 class="section-heading"><strong>Testimonials</strong></h2>
-                        <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="images/person_1.jpg" alt="Image" class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Mike Fisher</span>
-                                    <span>Owner, Ford</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="images/person_2.jpg" alt="Image" class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Jean Stanley</span>
-                                    <span>Traveler</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="testimonial-2">
-                            <blockquote class="mb-4">
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, deserunt eveniet veniam. Ipsam, nam, voluptatum"</p>
-                            </blockquote>
-                            <div class="d-flex v-card align-items-center">
-                                <img src="images/person_3.jpg" alt="Image" class="img-fluid mr-3">
-                                <div class="author-name">
-                                    <span class="d-block">Katie Rose</span>
-                                    <span>Customer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="site-section bg-primary py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 mb-4 mb-md-0">
-                        <h2 class="mb-0 text-white">What are you waiting for?</h2>
-                        <p class="mb-0 opa-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, laboriosam.</p>
-                    </div>
-                    <div class="col-lg-5 text-md-right">
-                        <a href="#" class="btn btn-primary btn-white">Rent a car now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <footer class="site-footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <h2 class="footer-heading mb-4">About Us</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                        <h2 class="footer-heading mb-4">Sosyal Medya</h2>
+                        <p>Sosyal Medya Hesaplarımızdan Bizleri Takip Edebilirsiniz.</p>
                         <ul class="list-unstyled social">
                             <li><a href="#"><span class="icon-facebook"></span></a></li>
                             <li><a href="#"><span class="icon-instagram"></span></a></li>
@@ -255,45 +186,17 @@
                     <div class="col-lg-8 ml-auto">
                         <div class="row">
                             <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Quick Links</h2>
+                                <h2 class="footer-heading mb-4">Linkler</h2>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Hakkımızda</a></li>
+                                    <li><a href="#">Referanslar</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Kullanım Şartları</a></li>
+                                    <li><a href="#">Gizlilik</a></li>
+                                    <li><a href="#">İletişim</a></li>
                                 </ul>
                             </div>
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Resources</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Support</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Company</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Testimonials</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -314,19 +217,20 @@
 
     </div>
 
-    <script src="~/carrentals-master/js/jquery-3.3.1.min.js"></script>
-    <script src="~/carrentals-master/js/popper.min.js"></script>
-    <script src="~/carrentals-master/js/bootstrap.min.js"></script>
-    <script src="~/carrentals-master/js/owl.carousel.min.js"></script>
-    <script src="~/carrentals-master/js/jquery.sticky.js"></script>
-    <script src="~/carrentals-master/js/jquery.waypoints.min.js"></script>
-    <script src="~/carrentals-master/js/jquery.animateNumber.min.js"></script>
-    <script src="~/carrentals-master/js/jquery.fancybox.min.js"></script>
-    <script src="~/carrentals-master/js/jquery.easing.1.3.js"></script>
-    <script src="~/carrentals-master/js/bootstrap-datepicker.min.js"></script>
-    <script src="~/carrentals-master/js/aos.js"></script>
 
-    <script src="~/carrentals-master/js/main.js"></script>
+            <script src="~/carrentals-master/js/jquery-3.3.1.min.js"></script>
+            <script src="~/carrentals-master/js/popper.min.js"></script>
+            <script src="~/carrentals-master/js/bootstrap.min.js"></script>
+            <script src="~/carrentals-master/js/owl.carousel.min.js"></script>
+            <script src="~/carrentals-master/js/jquery.sticky.js"></script>
+            <script src="~/carrentals-master/js/jquery.waypoints.min.js"></script>
+            <script src="~/carrentals-master/js/jquery.animateNumber.min.js"></script>
+            <script src="~/carrentals-master/js/jquery.fancybox.min.js"></script>
+            <script src="~/carrentals-master/js/jquery.easing.1.3.js"></script>
+            <script src="~/carrentals-master/js/bootstrap-datepicker.min.js"></script>
+            <script src="~/carrentals-master/js/aos.js"></script>
+
+            <script src="~/carrentals-master/js/main.js"></script>
 
 </body>
 

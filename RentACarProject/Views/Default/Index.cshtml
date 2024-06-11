@@ -1,4 +1,5 @@
-﻿@{
+﻿@model FilterCarViewModel
+@{
     Layout = null;
 }
 
@@ -92,46 +93,31 @@
                             </div>
                         </div>
 
-                        <form class="trip-form">
+                        <form class="trip-form" method="post" asp-controller="Default" asp-action="FilterCar">
 
                             <div class="row align-items-center">
 
                                 <div class="mb-2 mb-md-0 col-md-3">
-                                    <select name="" id="" class="custom-select form-control">
-                                        <option value="">Alış Lokasyon</option>
-                                        <option value="">İstanbul</option>
-                                        <option value="">Ankara</option>
-                                        <option value="">İzmir</option>
-                                        <option value="">Rize</option>
-                                        <option value="">Kayseri</option>
-                                        <option value="">Konya</option>
-                                        <option value="">Antalya</option>
-                                        <option value="">Gaziantep</option>
-                                    </select>
+
+                                    @Html.DropDownListFor(x => x.RecevingLocationId, (List<SelectListItem>)ViewBag.ReceivingLocation, "Alış Lokasyonu", new { @class = "custom-select form-control" })
+
                                 </div>
+
                                 <div class="mb-2 mb-md-0 col-md-3">
-                                    <select name="" id="" class="custom-select form-control">
-                                        <option value="">İade Lokasyon</option>
-                                        <option value="">İstanbul</option>
-                                        <option value="">Ankara</option>
-                                        <option value="">İzmir</option>
-                                        <option value="">Rize</option>
-                                        <option value="">Kayseri</option>
-                                        <option value="">Konya</option>
-                                        <option value="">Antalya</option>
-                                        <option value="">Gaziantep</option>
-                                    </select>
+
+                                    @Html.DropDownListFor(x => x.DeliveryLocationId, (List<SelectListItem>)ViewBag.DeliveryLocation, "Teslim Lokasyonu", new { @class = "custom-select form-control" })
+
                                 </div>
                                 <div class="mb-2 mb-md-0 col-md-3">
                                     <div class="form-control-wrap">
-                                        <input type="text" id="cf-3" placeholder="Alış Tarihi" class="form-control datepicker px-3">
+                                        <input type="text" id="cf-3" placeholder="Alış Tarihi" asp-for="ReceivingDate" class="form-control datepicker px-3">
                                         <span class="icon icon-date_range"></span>
 
                                     </div>
                                 </div>
                                 <div class="mb-2 mb-md-0 col-md-3">
                                     <div class="form-control-wrap">
-                                        <input type="text" id="cf-4" placeholder="Teslim Tarihi" class="form-control datepicker px-3">
+                                        <input type="text" id="cf-4" placeholder="Teslim Tarihi" asp-for="DeliveryDate" class="form-control datepicker px-3">
                                         <span class="icon icon-date_range"></span>
                                     </div>
                                 </div>
@@ -140,141 +126,142 @@
                                     <input type="submit" value="Araç Ara" class="btn btn-primary btn-block py-3">
                                 </div>
                             </div>
+                            </form>
 
-                        </form>
+                    </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-section">
+        <div class="container">
+            <h2 class="section-heading">
+                <strong>
+                    Nasıl çalışır?
+                </strong>
+            </h2>
+
+
+            <div class="row mb-5">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="step">
+                        <span>1</span>
+                        <div class="step-inner">
+                            <span class="number text-primary">01.</span>
+                            <h3>
+                                Bir araba seçin
+                            </h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="step">
+                        <span>2</span>
+                        <div class="step-inner">
+                            <span class="number text-primary">02.</span>
+                            <h3>
+                                Formu doldurun
+                            </h3>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="step">
+                        <span>3</span>
+                        <div class="step-inner">
+                            <span class="number text-primary">03.</span>
+                            <h3>
+                                Ödemenizi Yapın
+                            </h3>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="site-section">
-            <div class="container">
-                <h2 class="section-heading">
-                    <strong>
-                        Nasıl çalışır?
-                    </strong>
-                </h2>
-
-
-                <div class="row mb-5">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="step">
-                            <span>1</span>
-                            <div class="step-inner">
-                                <span class="number text-primary">01.</span>
-                                <h3>
-                                    Bir araba seçin
-                                </h3>
-
-                            </div>
-                        </div>
+    <div class="site-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center order-lg-2">
+                    <div class="img-wrap-1 mb-5">
+                        <img src="~/carrentals-master/images/feature_01.png" alt="Image" class="img-fluid">
                     </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="step">
-                            <span>2</span>
-                            <div class="step-inner">
-                                <span class="number text-primary">02.</span>
-                                <h3>
-                                    Formu doldurun
-                                </h3>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mb-4 mb-lg-0">
-                        <div class="step">
-                            <span>3</span>
-                            <div class="step-inner">
-                                <span class="number text-primary">03.</span>
-                                <h3>
-                                    Ödemenizi Yapın
-                                </h3>
-
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                <div class="col-lg-4 ml-auto order-lg-1">
+                    <h3 class="mb-4 section-heading"><strong>Araç kiralamak için kampanyalarımızdan kolaylıkla yararlanabilirsiniz.</strong></h3>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="site-section">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 text-center order-lg-2">
-                        <div class="img-wrap-1 mb-5">
-                            <img src="~/carrentals-master/images/feature_01.png" alt="Image" class="img-fluid">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 ml-auto order-lg-1">
-                        <h3 class="mb-4 section-heading"><strong>Araç kiralamak için kampanyalarımızdan kolaylıkla yararlanabilirsiniz.</strong></h3>
-                    </div>
+
+    <div class="site-section bg-primary py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4 mb-md-0">
+                    <h2 class="mb-0 text-white">
+                        Ne için bekliyorsun?
+                    </h2>
+                    <p class="mb-0 opa-7">Hemen bir araç kirala...</p>
+                </div>
+                <div class="col-lg-5 text-md-right">
+                    <a href="#" class="btn btn-primary btn-white">Şimdi Kirala</a>
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="site-section bg-primary py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7 mb-4 mb-md-0">
-                        <h2 class="mb-0 text-white">
-                            Ne için bekliyorsun?
-                        </h2>
-                        <p class="mb-0 opa-7">Hemen bir araç kirala...</p>
-                    </div>
-                    <div class="col-lg-5 text-md-right">
-                        <a href="#" class="btn btn-primary btn-white">Şimdi Kirala</a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2 class="footer-heading mb-4">Sosyal Medya</h2>
+                    <p>Sosyal Medya Hesaplarımızdan Bizleri Takip Edebilirsiniz.</p>
+                    <ul class="list-unstyled social">
+                        <li><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li><a href="#"><span class="icon-instagram"></span></a></li>
+                        <li><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-8 ml-auto">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <h2 class="footer-heading mb-4">Linkler</h2>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Hakkımızda</a></li>
+                                <li><a href="#">Referanslar</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Kullanım Şartları</a></li>
+                                <li><a href="#">Gizlilik</a></li>
+                                <li><a href="#">İletişim</a></li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
+            </div>
+            <div class="row pt-5 mt-5 text-center">
+                <div class="col-md-12">
+                    <div class="border-top pt-5">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <h2 class="footer-heading mb-4">Sosyal Medya</h2>
-                        <p>Sosyal Medya Hesaplarımızdan Bizleri Takip Edebilirsiniz.</p>
-                        <ul class="list-unstyled social">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-8 ml-auto">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <h2 class="footer-heading mb-4">Linkler</h2>
-                                <ul class="list-unstyled">
-                                    <li><a href="#">Hakkımızda</a></li>
-                                    <li><a href="#">Referanslar</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Kullanım Şartları</a></li>
-                                    <li><a href="#">Gizlilik</a></li>
-                                    <li><a href="#">İletişim</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="row pt-5 mt-5 text-center">
-                    <div class="col-md-12">
-                        <div class="border-top pt-5">
-                            <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
+    </footer>
 
     </div>
 
